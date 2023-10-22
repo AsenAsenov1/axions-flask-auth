@@ -73,8 +73,5 @@
     <ul><li><a href='{{ auth_uri }}'><h2>Sign In</h2></a></li></ul>
     {% endif %}
 
-    {% if config.get("B2C_RESET_PASSWORD_AUTHORITY") %}
-    <a href="{{config.get('B2C_RESET_PASSWORD_AUTHORITY')}}?client_id={{config.get('CLIENT_ID')}}">Reset Password</a>
-    {% endif %}
 </body>
 </html>
