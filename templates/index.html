@@ -58,14 +58,14 @@
 
     .button-container-left {
         position: absolute;
-        left: 10px;
+        left: 50px;
         top: 50%;
         transform: translateY(-50%);
     }
 
     .button-container-right {
         position: absolute;
-        right: 10px;
+        right: 100px;
         top: 50%;
         transform: translateY(-50%);
     }
@@ -73,35 +73,54 @@
     .button {
         margin: 10px;
         padding: 10px 20px;
-        background-color: #00ff00;
+        background-color: #FFFFFF; /* Change the background color to white */
         color: #000;
         border: none;
         border-radius: 5px;
         font-size: 1.5rem;
         cursor: pointer;
     }
+
+    .image-over-buttons {
+        position: absolute;
+        left: 0; /* Adjust the left position */
+        top: 350px; /* Move the image upward by 30px (negative values can also be used) */
+        transform: translateY(-50%);
+        width: 400px; /* Set the width to 500px */
+    }
+
+    .image-google {
+        position: absolute;
+        right: 0; /* Position the image at the right edge */
+        top: 35%; /* Center vertically */
+        transform: translateY(-50%);
+        width: 400px; /* Set the width to 400px */
+    }
 </style>
 <body>
     <div class="button-container-left">
-        <button class="button">Bot1</button>
-        <button class="button">Bot2</button>
+        <a href="https://genai-loader-axions.apps.cluster-9kktz.gcp.redhatworkshops.io"><button class="button">Loader</button></a>
+        <a href="https://pdf-bot-axions.apps.cluster-9kktz.gcp.redhatworkshops.io"><button class="button">PDF Bot</button></a>
+        <a href="http://neo4j-7474-axions.apps.cluster-9kktz.gcp.redhatworkshops.io/browser/"><button class="button">Database</button></a>
     </div>
+
+    <!-- Add the image over the buttons and set the width to 500px -->
+    <img src="https://assets.openshift.com/hubfs/Imported_Blog_Media/Logotype_RH_OpenShiftContainerPlatform_wLogo_CMYK_Black.jpg" alt="Red Hat Logo" class="image-over-buttons">
+    <img src="https://www.vectorlogo.zone/logos/google_cloud/google_cloud-ar21.png" alt="Google" class="image-google">
 
     <h1>Axions Web App</h1>
     <h2>Welcome {{ user.get("name") }}!</h2>
 
     <ul>
-
         {% if config.get("B2C_PROFILE_AUTHORITY") %}
             <li><a href='{{config.get("B2C_PROFILE_AUTHORITY")}}?client_id={{config.get("CLIENT_ID")}}'>Edit Profile</a></li>
         {% endif %}
-
         <li><a href="/logout">Logout</a></li>
     </ul>
 
     <div class="button-container-right">
-        <button class="button">Bot3</button>
-        <button class="button">Bot4</button>
+        <a href="http://34.66.229.151:8502/"><button class="button">Loader</button></a>
+        <a href="http://34.66.229.151:8503/"><button class="button">PDF Bot</button></a>
     </div>
 
     <hr>
